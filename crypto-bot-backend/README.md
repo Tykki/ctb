@@ -108,6 +108,3 @@ await baseClient.request({ method: 'evm_mine' as any });
 ### Why This Testing Method is Reliable
 * **`anvil_setStorageAt`:** Modifies the contract's storage slots directly in memory. This skips the wallet balance limits and transfer permissions that can stall traditional testing scripts.
 * **`evm_mine`:** Forces Anvil to clear its virtual mempool and immediately produce a block containing the artificial storage changes.
-
-## Local code for testing
-TEST=anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/alch_oK5SGirOrQQQSKr2zTs26 --block-time 12
