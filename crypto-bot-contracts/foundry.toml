@@ -1,0 +1,19 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+# 1. Enforce strict compiler version targets to ensure compatibility
+solc_version = "0.8.26"
+
+# 2. Activate the optimizer to compress bytecode size and lower transaction gas fees
+optimizer = true
+optimizer_runs = 200
+
+# FIX: Force the compiler to use Yul optimization pipelines to bypass Stack Too Deep bottlenecks natively
+via_ir = true
+
+# 3. Allow your local testing node to pull down real-world contract states
+ffi = true

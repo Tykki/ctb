@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* 1. Tailwind v4 Theme Customizations */
+@theme {
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+/* 2. Global DOM Body Overrides */
+body {
+  margin: 0;
+  background-color: #000000;
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Performance Layout - Low Latency Scrolling Performance Overrides */
+main, div {
+  will-change: transform, opacity;
+}
+
+/* 4. Custom Low-Profile Scrollbar Adjustments for High-Frequency Logs */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 1px solid #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316; /* Changes to theme orange highlight color on hover focus */
+}
+
+/* 5. Custom Animation Performance Enhancers */
+@keyframes fast-ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-ping-fast {
+  animation: fast-ping 0.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
